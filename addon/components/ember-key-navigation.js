@@ -23,7 +23,7 @@ export default Component.extend(Evented, {
   highlightedItem: null,
   isKeyPressed: false,
   focusInDefault: false,
-  navigationItem : 'key-navigation-item',
+  navigationItem : 'keyNavigationItem',
 
   didInsertElement() {
     this._super(...arguments);
