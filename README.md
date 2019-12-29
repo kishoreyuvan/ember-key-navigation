@@ -3,7 +3,7 @@ ember-key-navigation
 
 An EmberJS addon for keyboard navigation.
 
-While working with autocomplete or any other results list components, we need to support keyboard navigation. So we can use this addon as wrapper for those components. 
+While working with autocomplete or any other results list components, we need to support keyboard navigation. So we can use this addon as wrapper for those cases. 
 
 Compatibility
 ------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ Usage
 </EmberKeyNavigation>
 
 ```
-Here, input field has `autofocus` attribute. So the keyboard events bubbles to `EmberKeyNavigation` component.
+Here, Input field has `autofocus` attribute. So the keyboard events bubbles to `EmberKeyNavigation` component.
 The class attribute `navigation-list-container` must be present as a container class for results.
 The argument `onSelect` will trigger for keyEnter and click events.
 `EmberKeyNavigation` component yields the nav item component `keyNavigationItem`.
@@ -58,7 +58,7 @@ The argument `onSelect` will trigger for keyEnter and click events.
 </EmberKeyNavigation>
 
 ```
-Here,`focusInDefault` argument used to focus the wrapper component. 
+When no other Input field inside the `EmberKeyNavigation` component, the `focusInDefault` argument used to focus the wrapper component. 
 The class `navigation-list-container` used as a container class for results.
 
 * Ember Key Navigation component with written by own nav item component instead of `keyNavigationItem` component.
@@ -78,7 +78,7 @@ The class `navigation-list-container` used as a container class for results.
 </EmberKeyNavigation>
 
 ```
-Your Own Nav Item component must be sub class of `keyNavigationItem` component.
+The Own Nav Item component must be sub class of `keyNavigationItem` component.
 
 
 ``` js
