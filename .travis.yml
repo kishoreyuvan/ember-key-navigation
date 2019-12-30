@@ -51,6 +51,7 @@ jobs:
     - env: EMBER_TRY_SCENARIO=ember-canary
     - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
     - stage: "deploy"
+      script: skip
       provider: pages
       skip-cleanup: true
       github-token: $GITHUB_TOKEN
