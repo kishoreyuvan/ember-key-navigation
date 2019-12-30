@@ -1,6 +1,6 @@
 {
   "name": "ember-key-navigation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Ember addon for key navigation",
   "keywords": [
     "ember-addon",
@@ -57,7 +57,7 @@
     "node": "8.* || >= 10.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
     "demoURL": "https://kishoreyuvan.github.io/ember-key-navigation"
   }
 }
