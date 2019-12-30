@@ -50,7 +50,7 @@ jobs:
     - env: EMBER_TRY_SCENARIO=ember-beta
     - env: EMBER_TRY_SCENARIO=ember-canary
     - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
-    - stageL "deploy"
+    - stage: "deploy"
       provider: pages
       skip-cleanup: true
       github-token: $GITHUB_TOKEN
