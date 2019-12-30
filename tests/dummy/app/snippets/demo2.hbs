@@ -1,4 +1,4 @@
-<EmberKeyNavigation @focusInDefault=true class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
+<EmberKeyNavigation @focusInDefault="true" class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
   <div class="navigation-list-container">
     {{#each this.results as |result|}}
       <navigationWrapper.item @model={{result}} @onSelect={{action doStuff}}>

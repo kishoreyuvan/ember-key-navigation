@@ -10,17 +10,20 @@ module('Integration | Component | ember-key-navigation', function(hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<EmberKeyNavigation />`);
+    this.set('results', ['India', 'Usa', 'Japan']);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
     await render(hbs`
-      <EmberKeyNavigation>
-        template block text
+      <EmberKeyNavigation @model=results as |navigationWrapper|>
+        {{#each results as |result|}}
+          <navigationWrapper.item @model=result>
+            {{result}}
+          </navigationWrapper.item>
+        {{/each}}
       </EmberKeyNavigation>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.ok(this.element.textContent.trim().includes('India'));
+    assert.ok(this.element.textContent.trim().includes('Usa'));
+    assert.ok(this.element.textContent.trim().includes('Japan'));
   });
 });
