@@ -1,4 +1,4 @@
-ember-key-navigation
+#ember-key-navigation
 
 [![Build Status](https://travis-ci.org/kishoreyuvan/ember-key-navigation.svg?branch=master)](https://travis-ci.org/kishoreyuvan/ember-key-navigation)
 ==============================================================================
