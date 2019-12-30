@@ -23,7 +23,7 @@ export default Component.extend(Evented, {
   highlightedItem: null,
   isKeyPressed: false,
   focusInDefault: false,
-  navigationItem : 'keyNavigationItem',
+  navigationItem : 'key-navigation-item',
 
   didInsertElement() {
     this._super(...arguments);
@@ -80,7 +80,7 @@ export default Component.extend(Evented, {
     this.setProperties({
       isKeyPressed: true,
       highlightedIndex: index,
-      highlightedItem: this.model.objectAt(index)
+      highlightedItem: this.model[index]
     });
     this.scrollToVisible();
   },
@@ -103,11 +103,11 @@ export default Component.extend(Evented, {
     let highlightedElementRectHeight = highlightedElementRect.top + getOuterHeight(highlightedElement);
     // For scrollDown
     if (highlightedElementRectHeight > listElementRectHeight) {
-      highlightedElement.scrollIntoView(false);
+      listElement.scrollTop = listElement.scrollTop + (highlightedElementRectHeight - listElementRectHeight);
     }
     // For scrollUp
     if (highlightedElementRect.top < listElementRect.top) {
-      highlightedElement.scrollIntoView();
+      listElement.scrollTop = listElement.scrollTop + (highlightedElementRect.top - listElementRect.top);
     }
   }
 

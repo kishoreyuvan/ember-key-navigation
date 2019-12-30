@@ -1,0 +1,21 @@
+<div class="text-center text-white mb-5">
+  Use keyUp, keyDown, keyEnter and click events.
+</div>
+
+<div class="row">
+  <EmberKeyNavigation @focusInDefault="true" class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
+    <div class="navigation-list-container list-group">
+      {{#each this.results as |result|}}
+        <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
+          {{result}}
+        </navigationWrapper.item>
+      {{/each}}
+    </div>
+  </EmberKeyNavigation>
+
+  <div class="col-lg-7">
+    {{#let (get-code-snippet "demo2.hbs") as |snippet|}}
+      <pre class={{snippet.language}}>{{snippet.source}}</pre>
+    {{/let}}
+  </div>
+</div>

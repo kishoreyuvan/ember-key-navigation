@@ -1,0 +1,24 @@
+<div class="text-center text-white mb-5">
+  Use keyUp, keyDown, keyEnter and click events.
+</div>
+
+<div class="row">
+  <EmberKeyNavigation class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
+    <div class="mb-1">
+      <Input @class="form-control" @type="search" @autofocus="true" @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
+    </div>
+    <div class="navigation-list-container list-group">
+      {{#each this.results as |result|}}
+        <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
+          {{result}}
+        </navigationWrapper.item>
+      {{/each}}
+    </div>
+  </EmberKeyNavigation>
+
+  <div class="col-lg-7">
+    {{#let (get-code-snippet "demo1.hbs") as |snippet|}}
+      <pre class={{snippet.language}}>{{snippet.source}}</pre>
+    {{/let}}
+  </div>
+</div>

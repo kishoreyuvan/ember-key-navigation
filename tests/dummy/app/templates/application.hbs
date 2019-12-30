@@ -1,3 +1,37 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="py-5">
 
-{{outlet}}
+  <div class="row text-center text-white mb-2 py-4">
+    <div class="col-lg-9 mx-auto">
+      <h1 class="display-4">Ember Key Navigation</h1>
+      <p class="lead mb-0">
+        An EmberJS addon for keyboard navigation.
+      </p>
+      <p class="lead">
+        <a href="https://github.com/kishoreyuvan/ember-key-navigation" target="_blank" rel="noreferrer noopener">
+          <img src="/github.png" alt="github" class="github-logo">
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <p>
+      <LinkTo @class="btn btn-outline-primary mr-2" @route="demo1">
+        Navigation Wrapper with Input Field
+      </LinkTo>
+      <LinkTo @class="btn btn-outline-primary mr-2" @route="demo2">
+        Wrapper without Input Field
+      </LinkTo>
+      <LinkTo @class="btn btn-outline-primary" @route="demo3">
+        Wrapper with Custom Nav Item Component
+      </LinkTo>
+    </p>
+
+    <div class="card card-body mx-5">
+      {{outlet}}
+    </div>
+
+  </div>
+
+
+</div>
