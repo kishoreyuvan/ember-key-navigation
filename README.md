@@ -34,7 +34,7 @@ Usage
 
 <EmberKeyNavigation @model={{this.results}} as |navigationWrapper|>
   <div class="search-input">
-    <Input @type="search" @autofocus=true @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
+    <Input @type="search" @autofocus={{true}} @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
   </div>
   <div class="navigation-list-container">
     {{#each this.results as |result|}}
@@ -54,7 +54,7 @@ The argument `onSelect` will trigger for keyEnter and click events.
 ``` handlebars
 // template.hbs
 
-<EmberKeyNavigation @focusInDefault=true class="navigation-list-container" @model={{this.results}} as |navigationWrapper|>
+<EmberKeyNavigation @focusInDefault={{true}} class="navigation-list-container" @model={{this.results}} as |navigationWrapper|>
   {{#each this.results as |result|}}
     {{navigationWrapper.item @model=result @onSelect=(action doStuff)}}
   {{/each}}    
@@ -71,7 +71,7 @@ The class `navigation-list-container` used as a container class for results.
 
 <EmberKeyNavigation @navigationItem='myOwnNavItem' @model={{this.results}} as |navigationWrapper|>
   <div class="search-input">
-    <Input @type="search" @autofocus=true @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
+    <Input @type="search" @autofocus={{true}} @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
   </div>
   <div class="navigation-list-container">
     {{#each this.results as |result|}}
