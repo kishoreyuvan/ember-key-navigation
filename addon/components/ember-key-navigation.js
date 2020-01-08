@@ -54,7 +54,9 @@ export default Component.extend(Evented, {
     if (keyCode === KEYS.ENTER) {
       this.trigger('on-select');
     }
-    event.stopPropagation();
+
+    event.preventDefault(); // Prevent default full page scrolls
+    return false;
   },
 
   mouseMove() {
