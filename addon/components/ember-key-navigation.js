@@ -95,7 +95,7 @@ export default Component.extend(Evented, {
 
   scrollToVisible() {
     let { highlightedIndex } = this;
-    let listElement =  this.element.querySelector('.navigation-list-container');
+    let listElement =  this.element.querySelector('.navigation-list-container') || this.element;
     let highlightedElement = this.element.querySelectorAll('.navigation-item')[highlightedIndex];
 
     let listElementRect = listElement.getBoundingClientRect();

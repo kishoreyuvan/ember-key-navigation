@@ -1,9 +1,7 @@
-<EmberKeyNavigation @focusInDefault="true" class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
-  <div class="navigation-list-container">
-    {{#each this.results as |result|}}
-      <navigationWrapper.item @model={{result}} @onSelect={{action doStuff}}>
-        {{result}}
-      </navigationWrapper.item>
-    {{/each}}
-  </div>
+<EmberKeyNavigation @focusInDefault="true" @model={{this.results}} as |navigationWrapper|>
+  {{#each this.results as |result|}}
+    <navigationWrapper.item @model={{result}} @onSelect={{action doStuff}}>
+      {{result}}
+    </navigationWrapper.item>
+  {{/each}}
 </EmberKeyNavigation>
