@@ -41,6 +41,7 @@ Usage
 ```
 
 ``` js
+// *.js
 
 countries: [
   'India', 
