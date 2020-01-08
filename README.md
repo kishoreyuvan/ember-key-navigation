@@ -30,7 +30,7 @@ Usage
 ``` handlebars
 // template.hbs
 
-<EmberKeyNavigation @focusInDefault={{true}} class="navigation-list-container" @model={{this.countries}} as |navigationWrapper|>
+<EmberKeyNavigation @focusInDefault={{true}} @model={{this.countries}} as |navigationWrapper|>
   {{#each this.countries as |country|}}
     <navigationWrapper.item @model={{country}} @onSelect={{action doStuff}}>
       {{country}}
