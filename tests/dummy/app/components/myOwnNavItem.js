@@ -1,3 +1,4 @@
+// BEGIN-SNIPPET myOwnNavItem.js
 import layout from '../templates/components/myOwnNavItem';
 import NavItem from 'ember-key-navigation/components/key-navigation-item';
 import { computed } from '@ember/object';
@@ -9,3 +10,4 @@ export default NavItem.extend({
     return `${this.model} - ${countryCode}`;
   })
 });
+// END-SNIPPET

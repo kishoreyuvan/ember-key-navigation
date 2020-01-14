@@ -1,22 +1,28 @@
-<div class="text-center text-white mb-5">
-  Use keyUp, keyDown, keyEnter and click events.
-</div>
 
-<div class="row">
-  <EmberKeyNavigation @navigationItem="myOwnNavItem" class="col-lg-5" @model={{this.results}} as |navigationWrapper|>
-    <div class="mb-1">
-      <Input @class="form-control" @type="search" @autofocus="true" @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
-    </div>
-    <div class="navigation-list-container list-group">
-      {{#each this.results as |result|}}
-        <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}} />
-      {{/each}}
-    </div>
-  </EmberKeyNavigation>
+<h2 class="docs-md__h2">
+  <b>EmberKeyNavigation Component with custom nav item component</b>
+</h2>
 
-  <div class="col-lg-7">
-    {{#let (get-code-snippet "demo3.hbs") as |snippet|}}
-      <pre class={{snippet.language}}>{{snippet.source}}</pre>
-    {{/let}}
-  </div>
-</div>
+{{#docs-demo class="input-test" as |demo|}}
+  {{#demo.example name="demo3-example.hbs"}}
+    <EmberKeyNavigation @navigationItem="myOwnNavItem" @model={{this.results}} as |navigationWrapper|>
+      <div class="mb-1">
+        <Input @class="form-control" @type="search" @autofocus="true" @value={{this.search_text}} @autocomplete="off" @placeholder="Search" />
+      </div>
+      <div class="navigation-list-container list-group">
+        {{#each this.results as |result|}}
+          <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}} />
+        {{/each}}
+      </div>
+    </EmberKeyNavigation>
+  {{/demo.example}}
+
+  {{#demo.example name="myOwnNavItem.hbs"}}
+    {{formattedCountryName}}
+  {{/demo.example}}
+
+  {{demo.snippet "demo3-example.hbs"}}
+  {{demo.snippet "demo3.js" label="component.js"}}
+  {{demo.snippet "myOwnNavItem.hbs" label="myOwnNavItem.hbs"}}
+  {{demo.snippet "myOwnNavItem.js" label="myOwnNavItem.js"}}
+{{/docs-demo}}
