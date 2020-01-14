@@ -1,7 +1,7 @@
 {
   "name": "ember-key-navigation",
-  "version": "1.0.3",
-  "description": "An Ember addon for key navigation",
+  "version": "1.0.4",
+  "description": "A Simple EmberJS Addon that supports keyboard navigation inside the list.",
   "keywords": [
     "ember-addon",
     "key-navigation",
@@ -31,14 +31,19 @@
     "@ember/optional-features": "^0.7.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.12.1",
+    "ember-cli-addon-docs": "^0.6.16",
+    "ember-cli-addon-docs-esdoc": "^0.2.3",
     "ember-cli-dependency-checker": "^3.1.0",
+    "ember-cli-deploy": "^1.0.2",
+    "ember-cli-deploy-build": "^2.0.0",
+    "ember-cli-deploy-git": "^1.3.4",
+    "ember-cli-deploy-git-ci": "^1.0.1",
     "ember-cli-eslint": "^5.1.0",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^1.8.2",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
     "ember-cli-uglify": "^2.1.0",
-    "ember-code-snippet": "^3.0.0",
     "ember-disable-prototype-extensions": "^1.1.3",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^2.0.0",
@@ -59,5 +64,6 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://kishoreyuvan.github.io/ember-key-navigation"
-  }
+  },
+  "homepage": "https://kishoreyuvan.github.io/ember-key-navigation"
 }

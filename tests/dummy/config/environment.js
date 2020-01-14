@@ -44,8 +44,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    // Allow ember-cli-addon-docs to update the rootURL in compiled assets
     ENV.rootURL = '/ember-key-navigation/';
+    // here you can enable a production-specific feature
   }
 
   return ENV;

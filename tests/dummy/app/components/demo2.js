@@ -1,3 +1,4 @@
+// BEGIN-SNIPPET demo2.js
 import Component from '@ember/component';
 import layout from '../templates/components/demo2';
 import { countries } from 'dummy/utils/countrylist';
@@ -13,3 +14,4 @@ export default Component.extend({
     alert(`Selected country is ${result}`);
   }
 });
+ // END-SNIPPET

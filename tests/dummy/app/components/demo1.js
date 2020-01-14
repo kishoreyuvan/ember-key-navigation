@@ -1,3 +1,4 @@
+// BEGIN-SNIPPET demo1.js
 import Component from '@ember/component';
 import layout from '../templates/components/demo1';
 import { computed } from '@ember/object';
@@ -21,3 +22,4 @@ export default Component.extend({
     alert(`Selected country is ${result}`);
   }
 });
+ // END-SNIPPET

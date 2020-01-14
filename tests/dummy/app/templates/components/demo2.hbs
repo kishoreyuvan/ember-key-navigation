@@ -1,19 +1,19 @@
-<div class="text-center text-white mb-5">
-  Use keyUp, keyDown, keyEnter and click events.
-</div>
 
-<div class="row">
-  <EmberKeyNavigation @focusInDefault={{true}} class="list-group"  @model={{this.results}} as |navigationWrapper|>
-    {{#each this.results as |result|}}
-      <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
-        {{result}}
-      </navigationWrapper.item>
-    {{/each}}
-  </EmberKeyNavigation>
+<h2 class="docs-md__h2">
+  <b>EmberKeyNavigation Component with list of items</b>
+</h2>
 
-  <div class="col-lg-7">
-    {{#let (get-code-snippet "demo2.hbs") as |snippet|}}
-      <pre class={{snippet.language}}>{{snippet.source}}</pre>
-    {{/let}}
-  </div>
-</div>
+{{#docs-demo class="input-test" as |demo|}}
+  {{#demo.example name="demo2-example.hbs"}}
+    <EmberKeyNavigation @focusInDefault={{true}} class="list-group"  @model={{this.results}} as |navigationWrapper|>
+      {{#each this.results as |result|}}
+        <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
+          {{result}}
+        </navigationWrapper.item>
+      {{/each}}
+    </EmberKeyNavigation>
+  {{/demo.example}}
+
+  {{demo.snippet "demo2-example.hbs"}}
+  {{demo.snippet "demo2.js" label="component.js"}}
+{{/docs-demo}}

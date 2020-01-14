@@ -1,7 +1,0 @@
-<EmberKeyNavigation @focusInDefault="true" @model={{this.results}} as |navigationWrapper|>
-  {{#each this.results as |result|}}
-    <navigationWrapper.item @model={{result}} @onSelect={{action doStuff}}>
-      {{result}}
-    </navigationWrapper.item>
-  {{/each}}
-</EmberKeyNavigation>

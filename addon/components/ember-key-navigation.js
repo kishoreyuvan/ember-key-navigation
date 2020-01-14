@@ -45,18 +45,19 @@ export default Component.extend(Evented, {
 
     if (keyCode === KEYS.DOWN_ARROW) {
       this.gotoNext();
+      return false;
     }
 
     if (keyCode === KEYS.UP_ARROW) {
       this.gotoPrevious();
+      return false;
     }
 
     if (keyCode === KEYS.ENTER) {
       this.trigger('on-select');
+      return false;
     }
 
-    event.preventDefault(); // Prevent default full page scrolls
-    return false;
   },
 
   mouseMove() {
