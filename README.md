@@ -1,6 +1,7 @@
 # ember-key-navigation
 
 [![npm version](https://badge.fury.io/js/ember-key-navigation.svg)](https://www.npmjs.com/package/ember-key-navigation)
+[![Bundle Size](https://flat.badgen.net/bundlephobia/minzip/ember-key-navigation)](https://bundlephobia.com/result?p=ember-key-navigation)
 [![GitHub license](https://img.shields.io/github/license/kishoreyuvan/ember-key-navigation.svg)](https://github.com/kishoreyuvan/ember-key-navigation/blob/master/LICENSE.md)
 [![Build Status](https://travis-ci.com/kishoreyuvan/ember-key-navigation.svg?branch=master)](https://travis-ci.com/kishoreyuvan/ember-key-navigation)
 
