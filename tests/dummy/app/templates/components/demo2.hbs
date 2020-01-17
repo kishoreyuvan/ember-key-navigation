@@ -1,17 +1,22 @@
 
-<h2 class="docs-md__h2">
-  <b>EmberKeyNavigation Component with list of items</b>
-</h2>
+<div id="demo2" class="my-4">
+  <b>2.EmberKeyNavigation Component with list of items</b>
+</div>
 
 {{#docs-demo class="input-test" as |demo|}}
   {{#demo.example name="demo2-example.hbs"}}
-    <EmberKeyNavigation @focusInDefault={{true}} class="list-group"  @model={{this.results}} as |navigationWrapper|>
-      {{#each this.results as |result|}}
-        <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
-          {{result}}
-        </navigationWrapper.item>
-      {{/each}}
-    </EmberKeyNavigation>
+    <div class="py-5 text-center border">
+      Right click Here
+    </div>
+    {{#if showContextMenu}}
+      <EmberKeyNavigation @focusInDefault={{true}} class="list-group" @model={{this.results}} as |navigationWrapper|>
+        {{#each this.results as |result|}}
+          <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}}>
+            {{result}}
+          </navigationWrapper.item>
+        {{/each}}
+      </EmberKeyNavigation>
+    {{/if}}
   {{/demo.example}}
 
   {{demo.snippet "demo2-example.hbs"}}

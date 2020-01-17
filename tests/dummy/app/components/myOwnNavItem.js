@@ -8,6 +8,10 @@ export default NavItem.extend({
   formattedCountryName: computed('model', function() {
     let countryCode = this.model.slice(0, 2).toUpperCase();
     return `${this.model} - ${countryCode}`;
-  })
+  }),
+
+  onOptionSelected() {
+    alert(`Selected country is ${this.formattedCountryName}`);
+  }
 });
 // END-SNIPPET
