@@ -1,7 +1,7 @@
 
-<h2 class="docs-md__h2">
-  <b>EmberKeyNavigation Component with custom nav item component</b>
-</h2>
+<div id="demo3" class="my-4 heading-anchor">
+  <b>3. EmberKeyNavigation Component with custom nav item component</b>
+</div>
 
 {{#docs-demo class="input-test" as |demo|}}
   {{#demo.example name="demo3-example.hbs"}}
@@ -11,7 +11,7 @@
       </div>
       <div class="navigation-list-container list-group">
         {{#each this.results as |result|}}
-          <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} @onSelect={{action doStuff}} />
+          <navigationWrapper.item @class="list-group-item list-group-action" @model={{result}} />
         {{/each}}
       </div>
     </EmberKeyNavigation>

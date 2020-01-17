@@ -5,9 +5,16 @@ import { countries } from 'dummy/utils/countrylist';
 
 export default Component.extend({
   layout,
+  showContextMenu: false,
+
   init() {
     this._super(...arguments);
     this.set('results', countries);
+  },
+
+  contextMenu() {
+    this.toggleProperty('showContextMenu');
+    return false;
   },
 
   doStuff(result) {

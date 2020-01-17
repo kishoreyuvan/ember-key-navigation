@@ -16,10 +16,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.set('data', countries);
-  },
-
-  doStuff(result) {
-    alert(`Selected country is ${result}`);
   }
+
 });
  // END-SNIPPET
