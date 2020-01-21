@@ -94,6 +94,13 @@ export default Component.extend(Evented, {
     }
   },
 
+  resetHighlightedItemProps() {
+    this.setProperties({
+      highlightedIndex: -1,
+      highlightedItem: null
+    });
+  },
+
   scrollToVisible() {
     let { highlightedIndex } = this;
     let listElement =  this.element.querySelector('.navigation-list-container') || this.element;
