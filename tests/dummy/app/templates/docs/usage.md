@@ -73,7 +73,7 @@ export default Component.extend({
       <div class="my-2">
         when <b>EmberKeyNavigation</b> is a wrapper for only list of items, the <b>focusInDefault</b> argument used to focus the container of list items.
         <br>
-        Refer the <a href="demos"><b>Example 2</b></a> under demo section.
+        Refer the <a href="#/docs/demos"><b>Example 2</b></a> under demo section.
         <br><br>
         <b>Note: </b> EmberKeyNavigation with input field doesn't need this argument.
       </div>
@@ -85,7 +85,7 @@ export default Component.extend({
       <div class="my-2">
         In default, <b>EmberKeyNavigation</b> yields the <b>KeyNavigationItem</b> component as a nav item, If you want custom nav item, write your own nav item component as a sub class of <b>KeyNavigationItem</b> and pass it as a argument.
         <br>
-        Refer the <a href="demos"><b>Example 2</b></a> under demo section.
+        Refer the <a href="#/docs/demos"><b>Example 3</b></a> under demo section.
       </div>
     </section>
     <b>Note: </b> List items must be wrap inside the 'navigation-list-container' class.
