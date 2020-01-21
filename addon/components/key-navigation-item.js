@@ -23,9 +23,7 @@ export default Component.extend({
   },
 
   onOptionSelected() {
-    if(this.onSelect) {
-      this.onSelect(this.model);
-    }
+    this.onSelect(this.model);
   },
 
   click() {
@@ -33,7 +31,10 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    this.navigationWrapper.off('on-select', this, 'onOptionSelected');
+    if (this.isActive) {
+      this.resetHighlightedItemProps();
+      this.navigationWrapper.off('on-select', this, 'onOptionSelected');
+    }
     this._super(...arguments);
   }
 });

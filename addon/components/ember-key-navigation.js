@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import layout from '../templates/components/ember-key-navigation';
 import Evented from '@ember/object/evented';
 import { scheduleOnce } from '@ember/runloop';
+import { isEmpty } from '@ember/utils';
 
 const KEYS = {
   ENTER: 13,
@@ -91,6 +92,15 @@ export default Component.extend(Evented, {
   setHighLightedItem(item) {
     if (!this.isKeyPressed) {
       this.setHighLightedItemProps(this.model.indexOf(item));
+    }
+  },
+
+  resetHighlightedItemProps() {
+    if (isEmpty(this.model)) {
+      this.setProperties({
+        highlightedIndex: -1,
+        highlightedItem: null
+      });
     }
   },
 
