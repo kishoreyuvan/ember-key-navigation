@@ -35,11 +35,11 @@ export default Component.extend(Evented, {
 
   didUpdateAttrs() {
     this._super(...arguments);
-    if (this.model.length) {
+    if (this._navItemsLength !== this.model.length) {
       scheduleOnce('afterRender', this, 'setHighLightedItemProps');
+      this.set('_navItemsLength', this.model.length)
     }
   },
-
 
   keyDown(event) {
     let { keyCode } = event;
