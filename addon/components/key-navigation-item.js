@@ -4,10 +4,14 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   layout,
-  classNameBindings: [':navigation-item', 'isActive:active'],
+  classNameBindings: [':navigation-item', 'activeClass'],
   isActive: computed('highlightedItem', 'model', function() {
     return this.highlightedItem === this.model;
   }),
+  activeClass: computed('isActive', 'activeItemClass', function() {
+    return this.isActive ? this.activeItemClass : '';
+  }),
+  activeItemClass: 'active',
 
   didUpdateAttrs() {
     this._super(...arguments);
