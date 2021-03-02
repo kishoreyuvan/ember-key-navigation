@@ -36,7 +36,6 @@ export default Component.extend({
 
   willDestroyElement() {
     if (this.isActive) {
-      this.resetHighlightedItemProps();
       this.navigationWrapper.off('on-select', this, 'onOptionSelected');
     }
     this._super(...arguments);

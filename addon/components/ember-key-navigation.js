@@ -95,15 +95,6 @@ export default Component.extend(Evented, {
     }
   },
 
-  resetHighlightedItemProps() {
-    if (isEmpty(this.model)) {
-      this.setProperties({
-        highlightedIndex: -1,
-        highlightedItem: null
-      });
-    }
-  },
-
   scrollToVisible() {
     let { highlightedIndex } = this;
     let listElement =  this.element.querySelector('.navigation-list-container') || this.element;
