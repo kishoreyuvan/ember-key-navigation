@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import layout from '../templates/components/ember-key-navigation';
 import Evented from '@ember/object/evented';
 import { scheduleOnce } from '@ember/runloop';
-import { isEmpty } from '@ember/utils';
 
 const KEYS = {
   ENTER: 13,
