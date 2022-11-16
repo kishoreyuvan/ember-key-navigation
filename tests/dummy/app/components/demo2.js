@@ -1,3 +1,6 @@
+/* eslint-disable ember/no-classic-components */
+/* eslint-disable ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes */
 // BEGIN-SNIPPET demo2.js
 import Component from '@ember/component';
 import layout from '../templates/components/demo2';
@@ -19,6 +22,6 @@ export default Component.extend({
 
   doStuff(result) {
     alert(`Selected country is ${result}`);
-  }
+  },
 });
- // END-SNIPPET
+// END-SNIPPET
