@@ -39,7 +39,7 @@ export default Component.extend(Evented, {
 
   didUpdateAttrs() {
     this._super(...arguments);
-    if (this._navItemsLength !== this.model.length) {
+    if (this.model.length && this._navItemsLength !== this.model.length) {
       scheduleOnce('afterRender', this, 'setHighLightedItemProps');
       this.set('_navItemsLength', this.model.length);
     }
