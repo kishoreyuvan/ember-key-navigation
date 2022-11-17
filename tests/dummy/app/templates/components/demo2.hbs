@@ -3,8 +3,8 @@
   <b>2.EmberKeyNavigation Component with list of items</b>
 </div>
 
-{{#docs-demo class="input-test" as |demo|}}
-  {{#demo.example name="demo2-example.hbs"}}
+<DocsDemo @class="input-test" as |demo|>
+  <demo.example @name="demo2-example.hbs">
     <div class="py-5 text-center border">
       Right click Here
     </div>
@@ -17,8 +17,8 @@
         {{/each}}
       </EmberKeyNavigation>
     {{/if}}
-  {{/demo.example}}
+  </demo.example>
 
   {{demo.snippet "demo2-example.hbs"}}
   {{demo.snippet "demo2.js" label="component.js"}}
-{{/docs-demo}}
+</DocsDemo>

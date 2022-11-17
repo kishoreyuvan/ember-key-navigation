@@ -1,3 +1,7 @@
+/* eslint-disable ember/no-component-lifecycle-hooks */
+/* eslint-disable ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes */
+/* eslint-disable ember/no-classic-components */
 import Component from '@ember/component';
 import layout from '../templates/components/ember-key-navigation';
 import Evented from '@ember/object/evented';
@@ -6,12 +10,13 @@ import { scheduleOnce } from '@ember/runloop';
 const KEYS = {
   ENTER: 13,
   DOWN_ARROW: 40,
-  UP_ARROW: 38
+  UP_ARROW: 38,
 };
 
 function getOuterHeight(element) {
   let styles = window.getComputedStyle(element);
-  let margin = parseFloat(styles['marginTop']) + parseFloat(styles['marginBottom']);
+  let margin =
+    parseFloat(styles['marginTop']) + parseFloat(styles['marginBottom']);
   return element.offsetHeight + margin;
 }
 
@@ -23,7 +28,7 @@ export default Component.extend(Evented, {
   highlightedItem: null,
   isKeyPressed: false,
   focusInDefault: false,
-  navigationItem : 'key-navigation-item',
+  navigationItem: 'key-navigation-item',
 
   didInsertElement() {
     this._super(...arguments);
@@ -34,9 +39,9 @@ export default Component.extend(Evented, {
 
   didUpdateAttrs() {
     this._super(...arguments);
-    if (this._navItemsLength !== this.model.length) {
+    if (this.model.length && this._navItemsLength !== this.model.length) {
       scheduleOnce('afterRender', this, 'setHighLightedItemProps');
-      this.set('_navItemsLength', this.model.length)
+      this.set('_navItemsLength', this.model.length);
     }
   },
 
@@ -57,7 +62,6 @@ export default Component.extend(Evented, {
       this.trigger('on-select');
       return false;
     }
-
   },
 
   mouseMove() {
@@ -83,7 +87,7 @@ export default Component.extend(Evented, {
     this.setProperties({
       isKeyPressed: true,
       highlightedIndex: index,
-      highlightedItem: this.model[index]
+      highlightedItem: this.model[index],
     });
     this.scrollToVisible();
   },
@@ -96,22 +100,30 @@ export default Component.extend(Evented, {
 
   scrollToVisible() {
     let { highlightedIndex } = this;
-    let listElement =  this.element.querySelector('.navigation-list-container') || this.element;
-    let highlightedElement = this.element.querySelectorAll('.navigation-item')[highlightedIndex];
+    let listElement =
+      this.element.querySelector('.navigation-list-container') || this.element;
+    let highlightedElement =
+      this.element.querySelectorAll('.navigation-item')[highlightedIndex];
 
     let listElementRect = listElement.getBoundingClientRect();
-    let highlightedElementRect = highlightedElement.getBoundingClientRect();
+    let highlightedElementRect =
+      highlightedElement && highlightedElement.getBoundingClientRect();
 
-    let listElementRectHeight = listElementRect.top + getOuterHeight(listElement);
-    let highlightedElementRectHeight = highlightedElementRect.top + getOuterHeight(highlightedElement);
+    let listElementRectHeight =
+      listElementRect.top + getOuterHeight(listElement);
+    let highlightedElementRectHeight =
+      highlightedElementRect.top + getOuterHeight(highlightedElement);
     // For scrollDown
     if (highlightedElementRectHeight > listElementRectHeight) {
-      listElement.scrollTop = listElement.scrollTop + (highlightedElementRectHeight - listElementRectHeight);
+      listElement.scrollTop =
+        listElement.scrollTop +
+        (highlightedElementRectHeight - listElementRectHeight);
     }
     // For scrollUp
     if (highlightedElementRect.top < listElementRect.top) {
-      listElement.scrollTop = listElement.scrollTop + (highlightedElementRect.top - listElementRect.top);
+      listElement.scrollTop =
+        listElement.scrollTop +
+        (highlightedElementRect.top - listElementRect.top);
     }
-  }
-
+  },
 });

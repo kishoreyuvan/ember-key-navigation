@@ -1,14 +1,17 @@
+/* eslint-disable ember/no-classic-classes */
+/* eslint-disable ember/no-classic-components */
 // BEGIN-SNIPPET demo3.js
 import Component from '@ember/component';
 import layout from '../templates/components/demo1';
 import { computed } from '@ember/object';
 import { countries } from 'dummy/utils/countrylist';
 
+// eslint-disable-next-line ember/require-tagless-components
 export default Component.extend({
   layout,
   search_text: '',
 
-  results: computed('search_text', 'data', function() {
+  results: computed('search_text', 'data', function () {
     let searchText = this.search_text.toLowerCase();
     return this.data.filter((item) => item.toLowerCase().includes(searchText));
   }),
@@ -16,7 +19,6 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.set('data', countries);
-  }
-
+  },
 });
- // END-SNIPPET
+// END-SNIPPET
