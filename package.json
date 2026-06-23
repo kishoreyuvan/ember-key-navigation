@@ -1,6 +1,6 @@
 {
   "name": "ember-key-navigation",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A Simple EmberJS Addon that supports keyboard navigation inside the list.",
   "keywords": [
     "ember-addon",

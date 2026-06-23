@@ -42,8 +42,21 @@ export default Component.extend(Evented, {
   didUpdateAttrs() {
     this._super(...arguments);
     if (this.model.length && this._navItems !== this.model) {
-      scheduleOnce('afterRender', this, 'highlightFirstNonDisabledItem');
       this._navItems = this.model;
+      if (this.highlightedIndex >= 0) {
+        scheduleOnce('afterRender', this, 'retainHighlightedIndex');
+      } else {
+        scheduleOnce('afterRender', this, 'highlightFirstNonDisabledItem');
+      }
+    }
+  },
+
+  retainHighlightedIndex() {
+    let index = this.highlightedIndex;
+    if (index >= 0 && index < this.model.length && !this.isItemDisabled(index)) {
+      this.setHighLightedItemProps(index);
+    } else {
+      this.highlightFirstNonDisabledItem();
     }
   },
 
